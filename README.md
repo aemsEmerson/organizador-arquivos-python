@@ -6,19 +6,31 @@ Projeto desenvolvido durante meus estudos de Python.
 
 Organizar automaticamente arquivos de uma pasta de acordo com suas extensões.
 
+## Funcionalidades
+
+- Lista os arquivos de um diretório
+- Identifica a extensão dos arquivos.
+- Cria automaticamente as pastas necessárias.
+- Move os arquivos para a pasta correspondente.
+
 ## Tecnologias
 
 - Python 3
 - os
 - shutil
 
-## Como Funciona
+## Como executar
 
-- Lê todos os arquivos da pasta.
-- Identifica a extensão.
-- Cria automaticamente a pasta correspondente.
-- Move o arquivo para a pasta correta.
+1. Ajuste o caminho da pasta que deseja organizar.
+2. Execute o arquivos `main.py`.
+3. Os arquivos serão organizados automaticamente.
 
-## Próximos passos
-- Melhorar a logica utilizando dicionários.
-- Tornar o código mais eficiente.
+## Próximas melhorias
+- [ ] Refatorar utilizando dicionários.
+- [ ] Tornar o código mais modular.
+- [ ] Adicionar interface gráfica.
+- [ ] permitir escolher a pasta pelo terminal.
+
+## Autor
+
+Emerson Moura
