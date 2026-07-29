@@ -25,9 +25,24 @@ Organizar automaticamente arquivos de uma pasta de acordo com suas extensões.
 2. Execute o arquivos `main.py`.
 3. Os arquivos serão organizados automaticamente.
 
+## Evolução do Projeto.
+
+v1.0
+
+- Organização usando uma lista de extensões.
+- Uso de dois laços for.
+
+v.1.1
+
+- Refatoração  utlizando os.path.splitext().
+- Removendo o segundo for.
+- Organização dinamica para qualquer extensão.
+- Codigo simplificado.
+
+
 ## Próximas melhorias
+- [ x ] Tornar o código mais modular.
 - [ ] Refatorar utilizando dicionários.
-- [ ] Tornar o código mais modular.
 - [ ] Adicionar interface gráfica.
 - [ ] permitir escolher a pasta pelo terminal.
 

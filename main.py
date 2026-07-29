@@ -3,26 +3,55 @@ import shutil
 
 pasta = "/home/emers/Downloads/"
 
-arquivo = os.listdir(pasta) #vai ate o caminho transforma os arquivos em uma lista
+extensoes = {
+    #Imagens
+    ".jpeg": "Imagens",
+    ".jpg": "Imagens",
+    ".png": "Imagens",
 
-#Percorre todos os arquivos da pasta
-for arquivos in arquivo:
+    #
+    ".docx": "Documentos",
+    ".pdf": "Documentos",
+    ".txt": "Documentos",
+    ".odt": "Documentos",
+
+    #Compactados
+    ".zip": "Compactados",
+    ".tar": "Compactados",
+    ".gz": "Compactados",
+
+    #Executaveis
+    ".exe": "Programas",
+    ".deb": "Programas",
+    ".AppImage": "Programas",
+
+    #Imagens de disco
+    ".iso": "ISO"
+}
+#Obtem uma lista com os arquivos da pasta
+arquivos = os.listdir(pasta)
+
+#percorre todos os arquivos da pasta
+for arquivo in arquivos:
     #Monta o caminho completo do arquivo
-    origem = os.path.join(pasta,arquivos)
+    origem = os.path.join(pasta,arquivo)
 
-    #separa o nome da extensão
-    arquivo_ext = os.path.splitext(origem)
+    #Separa o caminho do arquivo e sua extensão
+    nome_arquivo, extensao = os.path.splitext(origem)
 
-    #Testa se o arquivo possui extensão
-    if arquivo_ext[1]:
-        #Remove o ponto da extensão (.pdf -> pdf)
-        nova_pasta = pasta + arquivo_ext[1].replace('.',"")
+    #Procura a extensão no dicionário e obtem o nome da pasta correspondente
+    lista_caminho = extensoes.get(extensao)
 
-        #Cria a pasta caso ela nao exista
+    #Verifica se a extensão existe no dicionário
+    if lista_caminho:
+
+        #Variavel que recebe o caminho completo a ser criado
+        nova_pasta = pasta + lista_caminho
+        #Cria a pasta se ela nao existir
         os.makedirs(nova_pasta, exist_ok=True)
-
-        #Move o arquivo para a pasta correspondente 
+        #Move os arquivos para a pasta correspondente
         shutil.move(origem, nova_pasta)
+        
 
 
 
